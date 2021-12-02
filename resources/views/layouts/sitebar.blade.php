@@ -1,172 +1,95 @@
-
-
-  <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="{{asset('assets')}}/img/sidebar-1.jpg">
-            <div class="logo">
-                <a href="" class="simple-text logo-normal" align="center">
-                    Student Fee
-                </a>
-            </div>
-            <div class="sidebar-wrapper">
-                <div class="user">
-                    <div class="photo">
-                        <img src="{{asset('assets')}}/img/faces/khanh.jpg" />
-                    </div>
-                    <div class="info">
-                        <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                            <span>
-                                Nguyễn Quốc Khánh
-                                <b class="caret"></b>
+<div class="sidebar" data-background-color="brown" data-active-color="danger">
+	    <!--
+			Tip 1: you can change the color of the sidebar's background using: data-background-color="white | brown"
+			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+		-->
+	    	<div class="sidebar-wrapper">
+				<div class="user">
+	                <div class="photo">
+	                    <img src="{{asset('assets')}}/img/khanh.jpg" />
+	                </div>
+	                <div class="info">
+						<a data-toggle="collapse" href="#collapseExample" class="collapsed">
+							<span>
+                                Chào {{ Session::get('fullName') }}
                             </span>
-                        </a>
-                        <div class="clearfix"></div>
-                        <div class="collapse" id="collapseExample">
-                            <ul class="nav">
-                                <li>
-                                    <a href="/my-profile.html">
-                                         <i class="material-icons">person</i>
-                                        <span class="sidebar-normal"> My Profile </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="edit-profile.html">
-                                         <i class="material-icons">edit</i>
-                                        <span class="sidebar-normal"> Edit Profile </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="material-icons">settings</i>
-                                        <span class="sidebar-normal"> Settings </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <ul class="nav">
+	                    </a>
+						<div class="clearfix"></div>
+
+	                    <div class="collapse" id="collapseExample">
+	                        <ul class="nav">
+	                            <li>
+                                <a href="{{route('profile.index')}}">
+										<i class="ti-user"></i>
+                                         Thông tin cá nhân
+									</a>
+								</li>
+	                            <li>
+									<a href="{{route('password.index')}}">
+										<i class="ti-settings"></i>
+                                            Đổi mật khẩu
+									</a>
+								</li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	             <ul class="nav">
                     <li class="active">
-                        <a href="/">
-                            <i class="material-icons">home</i>
-                            <p> Home </p>
+                    <a  href="{{ route('fee.index') }}">
+                            <i class="ti-money"></i>
+                            <p> Nộp Học phí</p>
                         </a>
                     </li>
-                    <li>
-                        <a data-toggle="collapse" href="#pagesExamples">
-                            <i class="material-icons">paid</i>
-                            <p> Fee
-                                <b class="caret"></b>
-                            </p>
+                    <li class="active">
+                    <a  href="{{ route('feee.index') }}">
+                            <i class="ti-money"></i>
+                            <p> Học phí</p>
                         </a>
-                        <div class="collapse" id="pagesExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="./pages/pricing.html">
-                                        <i class="material-icons">payment</i>
-                                        <span class="sidebar-normal"> Payment Fee </span>
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="./pages/pricing.html">
-                                        <i class="material-icons">history</i>
-                                        <span class="sidebar-normal"> History Payment </span>
-                                    </a>
-                                </li>
-                            
-                            </ul>
-                        </div>
                     </li>
-                    <li>
-                        <a data-toggle="collapse" href="#componentsExamples">
-                            <i class="material-icons">location_city</i>
-                            <p> Grade
-                                <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="componentsExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="./components/buttons.html">
-                                        <i class="material-icons"> list </i>
-                                        <span class="sidebar-normal"> List Grade </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="./components/buttons.html">
-                                        <i class="material-icons"> add </i>
-                                        <span class="sidebar-normal"> Add Grade </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="./components/grid.html">
-                                        <i class="material-icons"> update </i>
-                                        <span class="sidebar-normal"> Update Grade</span>
-                                    </a>
-                                </li>
-                           
-                            </ul>
-                        </div>
+                    <li class="active">
+                        <a href="{{ route('major.index') }}">
+                            <i class="ti-list"></i>
+                        <p>Quản lý ngành học</p>
+                         </a>
                     </li>
-                    <li>
-                        <a data-toggle="collapse" href="#formsExamples">
-                            <i class="material-icons">people</i>
-                            <p> Student
-                                <b class="caret"></b>
-                            </p>
+                      <li class="active">
+                        <a href="{{ route('course.index') }}">
+                            <i class="ti-list"></i>
+                            <p> Quản lí khóa học</p>
                         </a>
-                        <div class="collapse" id="formsExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="./components/buttons.html">
-                                        <i class="material-icons"> list </i>
-                                        <span class="sidebar-normal"> List Student </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="./forms/regular.html">
-                                        <i class="material-icons"> add </i>
-                                        <span class="sidebar-normal"> Add Student </span>
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="./components/grid.html">
-                                        <i class="material-icons"> update </i>
-                                        <span class="sidebar-normal"> Update Profile Student</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li>
-                        <a data-toggle="collapse" href="#tablesExamples">
-                            <i class="material-icons">grid_on</i>
-                            <p> Statistical
-                                <b class="caret"></b>
-                            </p>
+                     <li class="active">
+                        <a href="{{ route('grade.index')}}">
+                            <i class="ti-menu"></i>
+                            <p>Danh sách lớp</p>
                         </a>
-                        <div class="collapse" id="tablesExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="./tables/regular.html">
-                                        <i class="material-icons">grading</i>
-                                        <span class="sidebar-normal"> Student Fee Statistical </span>
-                                    </a>
-                                </li>
-                                   <li>
-                                    <a href="./tables/regular.html">
-                                        <i class="material-icons">grading</i>
-                                        <span class="sidebar-normal"> Student Fee Statistical </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    </li> 
+                    <li class="active">
+                        <a href="{{route('payment.index')}}">
+                            <i class="ti-menu"></i>
+                            <p> Hình thức nộp học phí</p>
+                        </a>
+                    </li>
+                      <li class="active">
+                        <a href="{{ route('scholarship.index') }}">
+                            <i class="ti-medall"></i>
+                        <p>Học bổng</p>
+                         </a>
+                    </li> 
+                     <li class="active">
+                    <a  href="{{ route('bill.index') }}">
+                            <i class="ti-layout-grid3"></i>
+                            <p> Thống kê</p>
+                        </a>
                     </li>
                     
-                    <li>
-                        <a href="./calendar.html">
-                            <i class="material-icons">logout</i>
-                            <p> Log out </p>
+                    <li class="active">
+                        <a href="{{ route('logout') }}" class=" btn-magnify">
+                            <i class="ti-arrow-circle-left"></i>
+                            <p> Đăng xuất </p>
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
+	    	</div>
+	    </div>

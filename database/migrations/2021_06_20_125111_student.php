@@ -15,16 +15,21 @@ class Student extends Migration
     {
         //Schema thư viện laravel hỗ trợ hành động của bảng
         // Blue là thư viện hỗ trợ tạo cột
-        Schema::create('Student', function (Blueprint $table) {
+        Schema::create('student', function (Blueprint $table) {
             # $table->id();// id tự tăng và có kiểu dữ liệu big int primary key
             $table->increments('idStudent'); #tự tăng kiểu dữ liệu int primary key
-            $table->string('firstName', 100); #varchar
-            $table->string('lastName', 100); #varchar
+            $table->string('nameStudent', 100); #varchar
             $table->boolean('gender');
             $table->date('dateBirth');
+            $table->string('address', 255); #varchar
+            $table->string('email', 50); #varchar
             $table->unsignedInteger('idGrade');
             $table->foreign('idGrade')->references('idGrade')->on('Grade');
-            $table->string('email', 50); #varchar
+            $table->unsignedInteger('idPaymentOption');
+            $table->foreign('idPaymentOption')->references('idPaymentOption')->on('paymentoption');
+            $table->unsignedInteger('idScholarship');
+            $table->foreign('idScholarship')->references('idScholarship')->on('scholarship');
+            $table->integer('debtfees');
         });
     }
 
@@ -35,6 +40,6 @@ class Student extends Migration
      */
     public function down()
     {
-        Schema::drop('Student');
+        Schema::drop('student');
     }
 }

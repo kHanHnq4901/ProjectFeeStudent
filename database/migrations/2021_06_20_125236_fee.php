@@ -13,14 +13,13 @@ class Fee extends Migration
      */
     public function up()
     {
-        Schema::create('Fee', function (Blueprint $table) {
-            $table->increments('idFee');
-            $table->unsignedInteger('idStudent');
-            $table->foreign('idStudent')->references('idStudent')->on('student');
-            $table->unsignedInteger('paymentOption');
-            $table->foreign('paymentOption')->references('idPaymentOption')->on('PaymentOption');
-            $table->unsignedInteger('scholarship');
-            $table->unsignedInteger('additionalFee');
+        Schema::create('fee', function (Blueprint $table) {
+            $table->unsignedInteger('idMajor');
+            $table->foreign('idMajor')->references('idMajor')->on('major');
+            $table->unsignedInteger('idCourse');
+            $table->foreign('idCourse')->references('idCourse')->on('course');
+            $table->integer('fee');
+            $table->primary(['idMajor', 'idCourse']);
         });
     }
 
@@ -31,6 +30,6 @@ class Fee extends Migration
      */
     public function down()
     {
-        Schema::drop('Fee');
+        Schema::drop('fee');
     }
 }

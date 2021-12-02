@@ -13,10 +13,13 @@ class Grade extends Migration
      */
     public function up()
     {
-        Schema::create('Grade', function (Blueprint $table) {
+        Schema::create('grade', function (Blueprint $table) {
             $table->increments('idGrade');
             $table->string('nameGrade', 50);
-            $table->unsignedInteger('course');
+            $table->unsignedInteger('idMajor');
+            $table->foreign('idMajor')->references('idMajor')->on('Major');
+            $table->unsignedInteger('idCourse');
+            $table->foreign('idCourse')->references('idCourse')->on('Course');
         });
     }
 
@@ -27,6 +30,6 @@ class Grade extends Migration
      */
     public function down()
     {
-        Schema::drop('Grade');
+        Schema::drop('grade');
     }
 }

@@ -1,35 +1,25 @@
   <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portofolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">    
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="http://www.creative-tim.com"> Creative Tim </a>, made with love for a better web
-                    </p>
-                </div>
-            </footer>
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul>
+							<li>
+								<a href="http://www.creative-tim.com">
+									
+								</a>
+							</li>
+							<li>
+								<a href="http://blog.creative-tim.com">
+									
+								</a>
+							</li>
+							<li>
+								<a href="http://www.creative-tim.com/license">
+									
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright pull-right">
+					</div>
+				</div>
+			</footer>
